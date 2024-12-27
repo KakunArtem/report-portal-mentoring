@@ -11,9 +11,19 @@ if (fs.existsSync(envFile)) {
 }
 
 export const envConfig = {
+    //#### env config ####
     executionEnv: process.env.EXECUTION_ENV,
+
+    //#### urls ####
     baseUrl: process.env.BASE_URL || 'dev',
+
+    //#### browser config ####
     headless: process.env.HEADLESS === 'true',
-    username: process.env.USER_NAME,
-    password: process.env.PASSWORD
+
+    //#### credentials ####
+    username: process.env.USER_NAME || '',
+    password: process.env.PASSWORD || '',
+
+    //#### report portal config ####
+    projectName: process.env.PROJECT_NAME
 };

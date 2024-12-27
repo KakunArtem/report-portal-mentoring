@@ -1,6 +1,6 @@
-import {BasePage} from "./base.page";
-import {Page} from "@playwright/test";
-import {Locator} from "playwright";
+import {BasePage} from './base.page';
+import {Page} from '@playwright/test';
+import {Locator} from 'playwright';
 
 export class LaunchesPage extends BasePage {
     private launchesDropDownButton = this.page.locator('xpath=//div[contains(@class, "allLatestDropdown__icon--ZcM8q")]');
