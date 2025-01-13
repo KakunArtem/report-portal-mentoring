@@ -1,0 +1,37 @@
+{
+  "name": "report-portal-mentoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KakunArtem/report-portal-mentoring.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KakunArtem/report-portal-mentoring/issues"
+  },
+  "homepage": "https://github.com/KakunArtem/report-portal-mentoring#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.1",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "playwright": "^1.49.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.6",
+    "winston": "^3.17.0"
+  }
+}
