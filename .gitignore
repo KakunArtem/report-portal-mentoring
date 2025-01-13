@@ -3,3 +3,6 @@
 /test.iml
 /node_modules/
 /reports/
+/allure-results/
+/test-results/
+/allure-report/

@@ -1,20 +1,24 @@
-import { Page } from 'playwright';
-import { setupBrowser } from './hooks';
-import { LoginPage } from '../src/pages';
+import {expect, test} from './fixtures';
+import {LoginPage} from "../src/pages";
 
-describe('Login Test Suite', () => {
-    const { getPage } = setupBrowser();
-    let page: Page;
+test.describe('Login Test Suite', () => {
     let loginPage: LoginPage;
 
-    beforeAll(async () => {
-        page = getPage();
+    test.beforeEach(async ({page}) => {
         loginPage = new LoginPage(page);
+        await loginPage.openHomePage();
     });
 
-    test('Should load Login page', async () => {
-        await loginPage.openHomePage();
-        const title = await loginPage.getTitle();
-        expect(title).toBe('Report Portal');
+    test('Should login with valid user', async ({page}) => {
+        await loginPage.loginWithTestUser();
+        await page.waitForURL(/.*dashboard.*/);
+        const url = page.url();
+        expect(url).toContain('dashboard');
+    });
+
+    test('Should display bad credentials label with invalid user', async ({page}) => {
+        await loginPage.login('invalidUserName', 'InvalidPassword');
+        const isDisplayed = await loginPage.badCredentialLabelIsEnabled();
+        expect(isDisplayed).toBe(true);
     });
 });

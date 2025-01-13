@@ -1,11 +1,14 @@
 import {envConfig, logger} from "../configs";
 import {Page} from "playwright";
+import {Sidebar} from "./components/sidebar";
 
 export class BasePage {
-    private page: Page;
+    protected page: Page;
+    protected sideBar: Sidebar;
 
     constructor(page: Page) {
         this.page = page;
+        this.sideBar = new Sidebar(this.page);
     }
 
     async openPage(url: string) {
@@ -19,5 +22,9 @@ export class BasePage {
 
     async getTitle(): Promise<string> {
         return await this.page.title();
+    }
+
+    getSideBar() {
+        return this.sideBar;
     }
 }
