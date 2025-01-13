@@ -1,7 +1,7 @@
-import {BasePage} from "./base.page";
-import {Page} from "playwright";
-import {MainPage} from "./main.page";
-import {envConfig} from "../configs";
+import {BasePage} from './base.page';
+import {Page} from 'playwright';
+import {MainPage} from './main.page';
+import {envConfig} from '../configs';
 
 export class LoginPage extends BasePage {
     private loginField = this.page.locator('[name="login"]');

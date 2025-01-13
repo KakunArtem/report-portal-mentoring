@@ -1,6 +1,6 @@
-import {envConfig, logger} from "../configs";
-import {Page} from "playwright";
-import {Sidebar} from "./components/sidebar";
+import {envConfig, logger} from '../configs';
+import {Page} from 'playwright';
+import {Sidebar} from './components/sidebar';
 
 export class BasePage {
     protected page: Page;

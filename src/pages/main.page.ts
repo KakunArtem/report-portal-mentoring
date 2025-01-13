@@ -1,5 +1,5 @@
-import {Page} from "playwright";
-import {BasePage} from "./base.page";
+import {Page} from 'playwright';
+import {BasePage} from './base.page';
 
 export class MainPage extends BasePage {
 
