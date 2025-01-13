@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx cucumber-js --parallel 3",
     "report": "allure generate --clean allure-results && allure open"
   },
   "repository": {
@@ -22,9 +22,12 @@
   },
   "homepage": "https://github.com/KakunArtem/report-portal-mentoring#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.1.0",
+    "@cucumber/messages": "^27.0.2",
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.10.1",
-    "allure-playwright": "^3.0.7",
+    "allure-commandline": "^2.32.0",
+    "allure-cucumberjs": "^3.0.7",
     "playwright": "^1.49.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
